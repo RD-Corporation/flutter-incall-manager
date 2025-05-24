@@ -140,7 +140,7 @@ class _MyAppState extends State<MyApp> {
     }
 
     return items
-        .map((item) => RaisedButton(
+        .map((item) => ElevatedButton(
               onPressed: () async {
                 print('${item.keys.first}');
                 await item.values.first();

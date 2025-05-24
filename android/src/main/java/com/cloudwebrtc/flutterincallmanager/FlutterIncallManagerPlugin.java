@@ -47,7 +47,6 @@ import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
 import io.flutter.plugin.common.MethodChannel.Result;
-import io.flutter.plugin.common.PluginRegistry.Registrar;
 
 
 /**
@@ -236,13 +235,6 @@ public class FlutterIncallManagerPlugin implements FlutterPlugin, ActivityAware,
 
     public Context getContext() {
         return mContext;
-    }
-
-    public static void registerWith(Registrar registrar) {
-        final MethodChannel channel = new MethodChannel(registrar.messenger(), "FlutterInCallManager.Method");
-        FlutterIncallManagerPlugin plugin = new FlutterIncallManagerPlugin();
-        plugin.initialize(registrar.messenger(), channel, registrar.context(), registrar.activity());
-        channel.setMethodCallHandler(plugin);
     }
 
     private void initialize(BinaryMessenger binaryMessenger, MethodChannel channel, Context context, Activity activity) {
