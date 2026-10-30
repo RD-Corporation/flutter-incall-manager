@@ -3,7 +3,7 @@ version '1.0-SNAPSHOT'
 buildscript {
     repositories {
         google()
-        jcenter()
+        mavenCentral()
     }
 
     dependencies {
@@ -13,11 +13,12 @@ buildscript {
 rootProject.allprojects {
     repositories {
         google()
-        jcenter()
+        mavenCentral()
     }
 }
 apply plugin: 'com.android.library'
 android {
+    namespace 'com.cloudwebrtc.flutterincallmanager'
     compileSdkVersion 36
 
     defaultConfig {
